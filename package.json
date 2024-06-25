@@ -1,0 +1,31 @@
+{
+  "name": "to-be-added",
+  "version": "0.0.0",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist-esm/bundle.min.mjs",
+      "require": "./dist-cjs/bundle.min.cjs"
+    },
+    "./server": "./server/index.js"
+  },
+  "type": "module",
+  "main": "dist/my-lib.js",
+  "module": "dist/my-lib.mjs",
+  "typings": "dist/my-lib.d.ts",
+  "files": [
+    "dist-*/",
+    "server/",
+    "src/"
+  ],
+  "scripts": {
+    "build": "npm run clean && rollup --config --sourcemap",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5",
+    "rollup": "^4.18.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-esbuild": "^6.1.1"
+  }
+}
