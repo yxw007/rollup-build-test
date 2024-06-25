@@ -1,22 +1,22 @@
 {
-  "name": "to-be-added",
-  "version": "0.0.0",
+  "name": "rollup-build-test",
+  "version": "0.0.1",
   "sideEffects": false,
-  "exports": {
-    ".": {
-      "import": "./dist-esm/bundle.min.mjs",
-      "require": "./dist-cjs/bundle.min.cjs"
-    },
-    "./server": "./server/index.js"
-  },
   "type": "module",
-  "main": "dist/my-lib.js",
-  "module": "dist/my-lib.mjs",
-  "typings": "dist/my-lib.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js"
+  },
   "files": [
-    "dist-*/",
-    "server/",
-    "src/"
+    "dist"
+  ],
+  "keywords": [
+    "typescript",
+    "node",
+    "rollup"
   ],
   "scripts": {
     "build": "npm run clean && rollup --config --sourcemap",

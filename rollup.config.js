@@ -1,8 +1,6 @@
 import dts from 'rollup-plugin-dts'
 import esbuild from 'rollup-plugin-esbuild'
 
-const name = "my-lib";
-
 const bundle = config => ({
   ...config,
   input: 'src/index.ts',
@@ -14,12 +12,12 @@ export default [
     plugins: [esbuild()],
     output: [
       {
-        file: `dist/${name}.cjs`,
+        file: `dist/index.cjs`,
         format: 'cjs',
         sourcemap: true,
       },
       {
-        file: `dist/${name}.js`,
+        file: `dist/index.js`,
         format: 'es',
         sourcemap: true,
       },
@@ -29,8 +27,8 @@ export default [
     plugins: [dts()],
     output: [
       {
-        file: `dist/${name}.d.ts`,
-        format: 'cjs',
+        file: `dist/index.d.ts`,
+        format: 'es',
       }
     ],
   }),
